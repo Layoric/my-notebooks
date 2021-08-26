@@ -38,6 +38,7 @@ RUN apt-get update \
         texlive-fonts-recommended \
         texlive-latex-recommended \
         texlive-latex-extra \
+        texlive-plain-generic \
     && rm -rf /var/lib/apt/lists/*
 
 # Install .NET Core SDK
