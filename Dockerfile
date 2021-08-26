@@ -35,6 +35,9 @@ RUN apt-get update \
         libstdc++6 \
         zlib1g \
         texlive-xetex \
+        texlive-fonts-recommended \
+        texlive-latex-recommended \
+        texlive-latex-extra \
     && rm -rf /var/lib/apt/lists/*
 
 # Install .NET Core SDK
