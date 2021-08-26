@@ -34,6 +34,7 @@ RUN apt-get update \
         libssl1.1 \
         libstdc++6 \
         zlib1g \
+        texlive-xetex \
     && rm -rf /var/lib/apt/lists/*
 
 # Install .NET Core SDK
@@ -102,6 +103,9 @@ RUN echo "$PATH"
 
 # Install kernel specs
 RUN dotnet interactive jupyter install
+
+# Install nbconvert
+RUN pip install nbconvert
 
 # Enable telemetry once we install jupyter for the image
 ENV DOTNET_INTERACTIVE_CLI_TELEMETRY_OPTOUT=false
