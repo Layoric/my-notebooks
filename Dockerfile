@@ -14,6 +14,13 @@ USER root
 RUN apt-get update
 RUN apt-get install -y curl
 
+# LaTeX dependencies
+RUN apt-get install -y texlive-xetex \
+        texlive-fonts-recommended \
+        texlive-latex-recommended \
+        texlive-latex-extra \
+        texlive-plain-generic
+
 ENV \
     # Enable detection of running in a container
     DOTNET_RUNNING_IN_CONTAINER=true \
@@ -34,11 +41,6 @@ RUN apt-get update \
         libssl1.1 \
         libstdc++6 \
         zlib1g \
-        texlive-xetex \
-        texlive-fonts-recommended \
-        texlive-latex-recommended \
-        texlive-latex-extra \
-        texlive-plain-generic \
     && rm -rf /var/lib/apt/lists/*
 
 # Install .NET Core SDK
