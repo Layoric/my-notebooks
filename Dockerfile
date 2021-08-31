@@ -92,7 +92,7 @@ RUN echo "\
 RUN chown -R ${NB_UID} ${HOME}
 USER ${USER}
 
-#Install nteract 
+#Install nteract
 RUN pip install nteract_on_jupyter
 
 # Install lastest build from main branch of Microsoft.DotNet.Interactive
